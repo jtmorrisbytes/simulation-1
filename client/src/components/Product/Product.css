@@ -1,11 +1,13 @@
 .Product {
-  width: 350px;
+  width: 600px;
   padding: 15px;
-  height: 250px;
+  /* height: 250px; */
   border-radius: 7px;
   background-color: #d34735;
+  margin-bottom: 20px;
 }
 .Product img {
-  width: 350px;
-  margin-right: 100px;
+  width: 320px;
+  height: 200px;
+  /* margin-right: 100px; */
 }

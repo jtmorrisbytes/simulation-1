@@ -10,6 +10,7 @@ class Dashboard extends React.Component {
     this.state = {
       products: [],
     };
+    this.deleteProduct = this.deleteProduct.bind(this);
   }
   componentDidMount() {
     console.log("component mounted");
@@ -22,12 +23,19 @@ class Dashboard extends React.Component {
         console.error(err);
       });
   }
+  deleteProduct(id) {
+    Axios.delete("http://localhost:3001/api/products/" + id)
+      .then(console.log)
+      .catch(console.error);
+  }
   render() {
     console.log("products", this.state.products);
     return (
       <div className="Dashboard">
         {this.state.products.map((product, index) => {
-          return <Product key={index} {...product} />;
+          return (
+            <Product key={index} delete={this.deleteProduct} {...product} />
+          );
         })}
       </div>
     );

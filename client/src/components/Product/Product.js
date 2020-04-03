@@ -4,7 +4,14 @@ export default function Product(props) {
   return (
     <div className="Product">
       <img src={props.img} />
-      {props.name}
+      <p className="name">{props.name}</p>
+      <p className="price">${props.price}</p>
+      <button
+        onClick={() => {
+          props.delete(props.id);
+        }}>
+        delete
+      </button>
     </div>
   );
 }
