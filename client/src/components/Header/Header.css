@@ -1,0 +1,30 @@
+.Header {
+  height: 100px;
+  width: 100%;
+  background-color: #ab2a19;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  padding-left: 75px;
+  /* justify-content: space-around; */
+}
+.Header .logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 25px;
+}
+.Header .brand {
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  margin-right: 100px;
+}
+.Header a {
+  text-decoration: none;
+  color: black;
+  border-radius: 5px;
+  background-color: rgb(237, 107, 90);
+  padding: 10px 12px;
+  font-weight: 600;
+  font-size: 18px;
+}
