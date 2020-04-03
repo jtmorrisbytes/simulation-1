@@ -2,9 +2,11 @@
   "name": "simulation-1",
   "version": "1.0.0",
   "description": "<img src=\"https://s3.amazonaws.com/devmountain/readme-logo.png\" width=\"250\" align=\"right\">",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx jasmine",
+    "start": "nodemon",
+    "test:watch": "nodemon --watch server/**/*.js --watch spec/**/*.spec.js --exec npm run test"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,15 @@
   "bugs": {
     "url": "https://github.com/jtmorrisbytes/simulation-1/issues"
   },
-  "homepage": "https://github.com/jtmorrisbytes/simulation-1#readme"
+  "homepage": "https://github.com/jtmorrisbytes/simulation-1#readme",
+  "devDependencies": {
+    "jasmine": "^3.5.0",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "massive": "^6.2.0",
+    "morgan": "^1.10.0"
+  }
 }

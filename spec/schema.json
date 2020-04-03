@@ -1,0 +1,16 @@
+{
+  "id": {
+    "type": "integer",
+    "primaryKey": true
+  },
+  "name": {
+    "type": "string",
+    "maxLength": 25
+  },
+  "price": {
+    "type": "integer"
+  },
+  "img": {
+    "type": "string"
+  }
+}
