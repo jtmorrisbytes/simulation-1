@@ -51,21 +51,16 @@ module.exports = {
     if (!req.params.id) {
       res.status(400).json({ error: "missing id in request" });
     } else if (String(+req.params.id) === "NaN") {
-      res
-        .status(400)
-        .json({
-          error: "param id was in an invalid format",
-          id: req.params.id,
-        });
+      res.status(400).json({
+        error: "param id was in an invalid format",
+        id: req.params.id,
+      });
     } else {
       req.app
         .get("db")
         .product.delete_product(req.params.id)
         .then((result) => {
-          res.json({ result: "ok" }).catch((err) => {
-            console.error(err);
-            res.status(500).json(err);
-          });
+          res.json(result);
         })
         .catch((error) => {
           console.error(error);

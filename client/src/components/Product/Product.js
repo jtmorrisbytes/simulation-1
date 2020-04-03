@@ -8,7 +8,7 @@ export default function Product(props) {
       <p className="price">${props.price}</p>
       <button
         onClick={() => {
-          props.delete(props.id);
+          props.delete(props.product_id);
         }}>
         delete
       </button>

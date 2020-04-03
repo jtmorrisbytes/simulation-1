@@ -17,6 +17,7 @@ app.put("/api/products", PC.update), app.delete("/api/products/:id", PC.delete);
 
 massive(process.env.DATABASE_URL).then((db) => {
   app.set("db", db);
+  db.product.seed().then(console.log).catch(console.error);
   app.listen(process.env.SERVER_PORT, process.env.SERVER_HOST, () => {
     console.log(
       `server listenening on http://${process.env.SERVER_HOST}:${process.env.SERVER_PORT}`

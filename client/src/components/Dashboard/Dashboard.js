@@ -24,10 +24,19 @@ class Dashboard extends React.Component {
       });
   }
   deleteProduct(id) {
-    Axios.delete("http://localhost:3001/api/products/" + id)
-      .then(console.log)
-      .catch(console.error);
+    if (id) {
+      Axios.delete("http://localhost:3001/api/products/" + id)
+        .then((res) => {
+          if (res.data.length) {
+            this.setState({ products: res.data });
+          }
+        })
+        .catch(console.error);
+    } else {
+      console.error("DeleteProduct:, id was undefined or null");
+    }
   }
+
   render() {
     console.log("products", this.state.products);
     return (
